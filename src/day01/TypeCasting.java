@@ -44,5 +44,24 @@ public class TypeCasting {
         double f2 = 5.5;
         double v1 = f1 - f2;
         System.out.println("v1 = " + v1);
+
+        int s = 10;
+        int o = 5;
+        int r2 = (int)(s*0);
+        System.out.println("r2 = " + r2);
+
+
+        // int보다 작은 사이즈를 가진 타입은 연산시 결과가 자동으로 int로 캐스팅 된다.
+//        char b1 = 'a';
+//        char b2 = 'c';
+
+        byte b1 = 100;
+        byte b2 = 50;
+
+        char cc = 'A';
+        int plusNum = 3;
+        char r4 = (char) (cc+plusNum);
+
+        System.out.println("r4 = " + r4);
     }
 }
