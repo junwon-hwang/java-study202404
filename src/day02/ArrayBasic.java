@@ -72,6 +72,5 @@ public class ArrayBasic {
         String[] sArr = new String[5]; // Sting은 기타, 문자는 char
         System.out.println(Arrays.toString(sArr));
         // [null, null, null, null, null]
-
     }
 }
