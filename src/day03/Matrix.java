@@ -45,22 +45,22 @@ public class Matrix {
             }
             System.out.println();
         }
-        // js : for ~ for , java : enhanced for loop , iteration ,foreach
-        System.out.println("=============================");
-        // int 2차원 배열에서 int 1차원 배열을 뽑음
-        // iter 2차원 배열 단축코드
-        for (int[] scores : classScores){
-            for (int n : scores){
+
+        // js: for ~ of, java : enhanced for loop, iteration, foreach
+        System.out.println("=====================");
+
+        for (int[] scores : classScores) {
+            for (int n : scores) {
                 System.out.printf("%d ", n);
             }
-            System.out.println(); // \n의 효과
+            System.out.println();
         }
 
-        System.out.println("=============================");
+        System.out.println("================");
 
         int[][] arr2by3 = {
-                {10,20,30},
-                {40,50,60}
+                {10, 20, 30},
+                {40, 50, 60}
         };
 
         int[][] arr4by5 = new int[4][5];
@@ -70,5 +70,6 @@ public class Matrix {
             }
             System.out.println();
         }
+
     }
 }
