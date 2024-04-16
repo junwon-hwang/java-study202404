@@ -16,12 +16,20 @@ public class Test {
 
         Member[] members = {m1,m2};
 
-        System.out.println("m1 = " + m1);
-        System.out.println("m2 = " + m2.toString());
+        for (Member m : members) {
+            System.out.println(m);
+        }
+
+        System.out.println("==============================");
+
+        MemberRepository mr = new MemberRepository();
+        MemberView mv = new MemberView();
+
+        Member newMember = new Member("ddd@fff.com","4321","철수","남자",18);
+
+        mr.addNewMember(newMember);
+        mv.showMembers();
 
 
-        System.out.println(Arrays.toString(arr));
-
-    
     }
 }
