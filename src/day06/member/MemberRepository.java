@@ -1,29 +1,84 @@
 package day06.member;
 
-// 역할: 회원배열을 관리하는 역할 - 회원 데이터 저장소
+// 역할: 회원 배열을 관리하는 역할 - 회원 데이터 저장소
 public class MemberRepository {
 
     // 필드
     static Member[] members;
 
     // 생성자
-    MemberRepository(){
+    MemberRepository() {
         this.members = new Member[3];
-        members[0] = new Member("zxv@def.com","1234","콩순이","여자",50);
-        members[1] = new Member("qwe@def.com","5678","팥돌이","남자",40);
-        members[2] = new Member("asd@def.com","9012","팔죽이","여자",30);
+        members[0] = new Member("abc@def.com", "1234", "콩순이", "여성", 50);
+        members[1] = new Member("ghi@def.com", "5432", "팥돌이", "남성", 40);
+        members[2] = new Member("xyz@def.com", "7890", "팥죽이", "여성", 30);
     }
+
     // 메서드
 
-    // 회원정보생성
-    void addNewMember(Member newMember){
-
+    /**
+     * 생성된 회원정보를 배열에 끝에 추가하는 기능
+     * @param newMember - 사용자의 입력으로 전달된 회원 정보 객체
+     */
+    void addNewMember(Member newMember) {
         // 배열에 데이터를 추가하는 로직
-        Member[] temp = new Member[members.length+1];
-        for (int i = 0; i <members.length ; i++) {
+        Member[] temp = new Member[members.length + 1];
+        for (int i = 0; i < members.length; i++) {
             temp[i] = members[i];
         }
-        temp[temp.length-1] = newMember;
+        temp[temp.length - 1] = newMember;
         members = temp;
     }
-}
+
+
+    /**
+     * 이메일 중복 확인하는 기능
+     * @param targetEmail - 검사할 사용자의 입력 이메일값
+     * @return - 이메일이 이미 존재한다면 true , 존재하지 않는 이메일이면 false
+     * @author - 코드작성자명
+     * @since - 2024.04.16 코드 작성일
+     */
+    boolean isDuplicateEmail(String targetEmail){
+      return findMemberByEmail(targetEmail) != null;
+    }
+
+    /**
+     * 이메일을 통해 회원의 모든 정보(객체)를 가져오는 메서드
+     * @param inputEmail - 사용자가 입력한 이메일값
+     * @return - 해당 이메일을 통해 찾아낸 회원 객체, 만약에 찾이 못하면 Null을 리턴
+     */
+    public Member findMemberByEmail(String inputEmail) {
+        for (Member m : members) {
+            if(inputEmail.equals(m.email)){
+                return m;
+            }
+        }
+        return null;
+    }
+
+    int findIndex(String email){
+        for (int i = 0; i <members.length ; i++) {
+            if(email.equals(members[i].email)){
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    // 배열에서 회원정보 삭제
+    public void removeMember(String inputEmail) {
+        int index = findIndex(inputEmail);
+        if(index == -1) return;
+        for (int i = index; i < members.length-1 ; i++) {
+            members[i] = members[i+1];
+        }
+
+        Member[] temp = new Member[members.length-1];
+        for (int i = 0; i <temp.length ; i++) {
+            temp[i] = members[i];
+
+        }
+        members = temp;
+        }
+    }
+
