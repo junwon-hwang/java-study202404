@@ -2,6 +2,7 @@ package day06.member;
 
 public class MemberList {
 
+    public static final int  NOT_FOUND = -1;
     Member[] mArr;
 
     MemberList() {
@@ -24,7 +25,7 @@ public class MemberList {
                 return i;
             }
         }
-        return -1;
+        return NOT_FOUND;
     }
     // 한 명의 회원 정보 얻기
     Member get(String email) {

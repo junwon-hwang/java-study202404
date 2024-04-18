@@ -1,6 +1,6 @@
 package day06.member;
 
-import util.SimpleInput;
+import utill.SimpleInput;
 
 import java.util.Scanner;
 

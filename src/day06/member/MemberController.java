@@ -1,6 +1,6 @@
 package day06.member;
 
-import util.SimpleInput;
+import utill.SimpleInput;
 
 // 역할: 사용자의 메뉴 입력을 분기하는 역할
 public class MemberController {

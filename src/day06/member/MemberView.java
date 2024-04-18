@@ -1,6 +1,6 @@
 package day06.member;
 
-import util.SimpleInput;
+import utill.SimpleInput;
 
 // 역할: 회원 데이터 관리를 위해 입력 출력을 담당함
 public class MemberView {
@@ -34,7 +34,12 @@ public class MemberView {
 
         String name = si.input("- 이름: ");
         String password = si.input("- 패스워드: ");
-        String gender = si.input("- 성별: ");
+        String gender = si.input("- 성별(M/F): ");
+        if(gender.equals("M")){
+            gender = MemberConstants.MALE;
+        }else if(gender.equals("F")){
+            gender = MemberConstants.FEMALE;
+        }
         int age = Integer.parseInt(si.input("- 나이: "));
 
         // 입력데이터를 기반으로 한 명의 회원 객체를 생성
