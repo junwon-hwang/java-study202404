@@ -62,8 +62,15 @@ public class Main {
 
         driver.drive(new Tucson());
 
+        Sonata sonata = new Sonata();
+        sonata.accelerate();
+        sonata.brake();
+        sonata.changeGear();
 
-
+        Tucson tucson = new Tucson();
+        tucson.accelerate();
+        tucson.brake();
+        tucson.changeGear();
 
     }
 }
