@@ -4,7 +4,6 @@ import day09.poly.car.Mustang;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
 public class MapExample {
     public static void main(String[] args) {
