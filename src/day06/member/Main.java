@@ -1,9 +1,5 @@
 package day06.member;
 
-import utill.SimpleInput;
-
-import java.util.Scanner;
-
 public class Main {
 
     public static void main(String[] args) {
