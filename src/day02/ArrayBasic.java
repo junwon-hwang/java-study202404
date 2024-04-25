@@ -2,7 +2,7 @@ package day02;
 
 import java.util.Arrays;
 
-public class ArrayBasic {
+public class  ArrayBasic {
     public static void main(String[] args) {
 
         // 배열의 특징
